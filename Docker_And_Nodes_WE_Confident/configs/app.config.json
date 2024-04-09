@@ -1,0 +1,28 @@
+{
+    "api": {
+      "registry": {
+        "providerName": "harbor",
+        "providerConfig": {
+          "harbor": {
+            "address": "/registry",
+            "projectId": 19
+          }
+        }
+      },
+      "nodeAddress": "/nodeAddress",
+      "dataServiceAddress": "/dataServiceAddress",
+      "authServiceAddress": "/authServiceAddress",
+      "nodeWavesAddress": "/nodeWaves",
+      "gatewayAddress": "/gateway"
+    },
+    "assetId": "",
+    "frozenAddress": "3NyAgGQgtYsdYEtiphvL2V8JLoSBdBQWcSu",
+    "metrics": {
+      "googleAnalytics": {
+        "token": ""
+      },
+      "yandexMetrics": {
+        "token": ""
+      }
+    }
+}

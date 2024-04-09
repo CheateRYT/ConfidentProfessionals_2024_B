@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="./node_modules/bootstrap/dist/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="./index.css" />
+    <title>Сonfident</title>
+  </head>
+  <body>
+    <script defer src="./node_modules/jquery/dist/jquery.min.js"></script>
+    <script defer src="./index.js"></script>
+    <div class="container">
+      <h1 class="title">Confident Контракт</h1>
+      <h2 class="choose-user__title">Выберите пользователя</h2>
+      <select name="choose-user__select" id="choose-user__select">
+        <option value="none">Выбрать пользователя по адресу</option>
+      </select>
+      <div class="password">
+        <label for="">Введите пароль</label>
+        <input id="user-password" type="text" />
+        <label for="">Введите кодовую фразу</label>
+        <input id="user-CID" type="text" />
+        <button id="authorize__btn" class="btn btn-primary">
+          Авторизироваться
+        </button>
+      </div>
+      <div class="form-group">
+        <label for="">Введите docker image</label>
+        <input id="image-docker" type="text" placeholder="docker-image" />
+        <label for="">Введите docker hash</label>
+        <input
+          class="form-input"
+          id="image-hash-docker"
+          type="text"
+          placeholder="docker-image-hash"
+        />
+        <button id="getContractId__btn" class="btn btn-primary">
+          Получить айди контракта
+        </button>
+        <p id="contactId-text"></p>
+        <div></div>
+        <input
+          class="form-input"
+          id="contractId"
+          type="text"
+          placeholder="contractId"
+        />
+        <button id="setContractId__btn" class="btn btn-primary">
+          Авторизироваться в системе контракта
+        </button>
+        <div></div>
+        <button class="btn btn-warning" id="setPreviusContractId">
+          Использовать последний контракт
+        </button>
+        <button class="btn btn-danger show" id="show_companies">
+          Показать все компании
+        </button>
+        <div class="companies-block">
+          <h3>Все компании</h3>
+          <div class="companies-list"></div>
+        </div>
+        <button class="btn btn-danger show" id="show_applications">
+          Показать всех пользователей
+        </button>
+        <div class="applications-block">
+          <h3>Все пользователи</h3>
+          <div class="applications-list"></div>
+        </div>
+        <button class="btn btn-danger show" id="show_products">
+          Показать карточки продуктов
+        </button>
+        <div class="product-block">
+          <h3>Все карточки продуктов</h3>
+          <div class="products-list"></div>
+        </div>
+
+        <button class="btn btn-danger show" id="show_cards">
+          Показать карточки заказов
+        </button>
+        <div class="cards-block">
+          <h3>Все карточки заказов</h3>
+          <div class="cards-list"></div>
+        </div>
+        <h4>Зарегистрироваться</h4>
+        <input
+          type="text"
+          class="input-pole"
+          placeholder="Имя компании или оставьте пустым "
+          id="companyName_register"
+        />
+        <input
+          type="text"
+          class="input-pole"
+          placeholder="Описание компании или оставьте пустым"
+          id="companyDescr_register"
+        />
+        <select name="role_register" id="role_register">
+          <option value="none">Выбрать роль</option>
+          <option value="operator">Оператор</option>
+          <option value="distributor">Дистрибутор</option>
+          <option value="client">Клиент</option>
+          <option value="provider">Поставщик</option>
+        </select>
+        <input
+          type="text"
+          class="input-pole"
+          placeholder="Регионы через запятую"
+          id="regions_register"
+        />
+        <input
+          type="text"
+          class="input-pole"
+          placeholder="ФИО"
+          id="fio_register"
+        />
+        <input
+          type="text"
+          class="input-pole"
+          placeholder="Контактные данные"
+          id="contactData_register"
+        />
+        <button class="btn btn-primary show" id="register_btn">
+          Подать заявку на регистрацию
+        </button>
+        <h4>Подтвердить регистрацию пользователя</h4>
+        <input
+          type="text"
+          class="input-pole"
+          placeholder="Адрес или ключ пользователя"
+          id="address_confirm"
+        />
+        <button class="btn btn-primary show" id="confirmRegister_btn">
+          Подтвердить регистрацию пользователя
+        </button>
+        <h4>Создать карточку продукта</h4>
+        <input
+          type="text"
+          class="input-pole"
+          placeholder="Имя продукта"
+          id="productName_createProduct"
+        />
+        <input
+          type="text"
+          class="input-pole"
+          placeholder="Описание продукта"
+          id="productDescr_createProduct"
+        />
+        <input
+          type="text"
+          class="input-pole"
+          placeholder="Регионы поставки через запятую"
+          id="regions_createProduct"
+        />
+        <button class="btn btn-primary show" id="createProduct_btn">
+          Создать карточку продукта
+        </button>
+        <h4>Подтвердить карточку продукта</h4>
+        <input
+          type="text"
+          class="input-pole"
+          placeholder="Имя продукта"
+          id="productName_confirmProduct"
+        />
+        <input
+          type="text"
+          class="input-pole"
+          placeholder="Адрес поставщика"
+          id="providerAddress_confirmProduct"
+        />
+        <input
+          type="text"
+          class="input-pole"
+          placeholder="Минимальный обьем"
+          id="minValue_confirmProduct"
+        />
+        <input
+          type="text"
+          class="input-pole"
+          placeholder="Максимальный обьем"
+          id="maxValue_confirmProduct"
+        />
+        <input
+          type="text"
+          class="input-pole"
+          placeholder="Адреса продавцов через запятую"
+          id="sellerAdresses_confirmProduct"
+        />
+        <button class="btn btn-primary show" id="confirmProduct_btn">
+          Подтвердить карточку продукта
+        </button>
+        <h4>Создать карточку заказа</h4>
+        <input
+          type="text"
+          class="input-pole"
+          placeholder="Имя продукта"
+          id="productName_createCard"
+        />
+        <input
+          type="text"
+          class="input-pole"
+          placeholder="Обьем"
+          id="volume_createCard"
+        />
+        <input
+          type="text"
+          class="input-pole"
+          placeholder="Желаемая дата доставки"
+          id="wantedDate_createCard"
+        />
+        <input
+          type="text"
+          class="input-pole"
+          placeholder="Адрес доставки"
+          id="delivery_createCard"
+        />
+        <input
+          type="text"
+          class="input-pole"
+          placeholder="Ключ/Адрес того у кого хотите заказать"
+          id="sellerAddress_createCard"
+        />
+        <input
+          type="text"
+          class="input-pole"
+          placeholder="Имя компании того у кого хотите заказать"
+          id="sellerCompany_createCard"
+        />
+        <button class="btn btn-primary show" id="createCard_btn">
+          Создать карточку заказа
+        </button>
+        <h4>Подтвердить карточку заказа</h4>
+        <input
+          type="text"
+          class="input-pole"
+          placeholder="Имя продукта"
+          id="productName_allowCard"
+        />
+        <input
+          type="text"
+          class="input-pole"
+          placeholder="Ключ/Адрес клиента"
+          id="clientAddress_allowCard"
+        />
+        <input
+          type="text"
+          class="input-pole"
+          placeholder="Подтвержденная дата доставки"
+          id="confirmedDate_allowCard"
+        />
+        <select name="choose_payment-rules" id="payment-rules">
+          <option value="none">Выбрать условия оплаты</option>
+          <option value="Предоплата">С предоплатой</option>
+          <option value="Безпредоплаты">Предоплата не предусмотрена</option>
+        </select>
+        <button class="btn btn-primary show" id="allowCard_btn">
+          Подтвердить карточку заказа
+        </button>
+        <h4>Одобрить карточку заказа</h4>
+        <input
+          type="text"
+          class="input-pole"
+          placeholder="Имя продукта который был у вас в заказе"
+          id="productName_confirmCard"
+        />
+        <button class="btn btn-primary show" id="confirm_btn">
+          Одобрить карточку заказа
+        </button>
+        <h4>Отклонить карточку заказа</h4>
+        <input
+          type="text"
+          class="input-pole"
+          placeholder="Имя продукта который был у вас в заказе"
+          id="productName_reject"
+        />
+        <button class="btn btn-primary show" id="rejectCard_btn">
+          Отклонить карточку заказа
+        </button>
+        <h4>Указать в карточке заказа что оплатил</h4>
+        <input
+          type="text"
+          class="input-pole"
+          placeholder="Имя продукта который был у вас в заказе"
+          id="productName_pay"
+        />
+        <button class="btn btn-primary show" id="payCard_btn">
+          Указать что оплатил
+        </button>
+        <h4>Указать в карточке заказа что получил</h4>
+        <input
+          type="text"
+          class="input-pole"
+          placeholder="Имя продукта который был у вас в заказе"
+          id="productName_get"
+        />
+        <button class="btn btn-primary show" id="getCard_btn">
+          Указать что получил
+        </button>
+        <footer>
+          <button class="btn btn-warning">
+            Редников Лев Дмитриевич | Чемпионат Профессионалы | ст гр. П222
+          </button>
+        </footer>
+      </div>
+    </div>
+  </body>
+</html>

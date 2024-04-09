@@ -1,0 +1,32 @@
+.show {
+  display: block;
+}
+#setPreviusContractId {
+  margin-bottom: 20px;
+}
+.input-pole {
+  width: 100%;
+}
+.btn {
+  margin-bottom: 30px;
+}
+input {
+  margin-bottom: 20px;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+.application {
+  margin-bottom: 30px;
+}
+.card {
+  margin-bottom: 30px;
+}
+.product {
+  margin-bottom: 30px;
+}
+.company {
+  margin-bottom: 30px;
+}
